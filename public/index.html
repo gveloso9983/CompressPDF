@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Image Compressor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF Image Compressor</h1>
+        <p class="subtitle">Compress PDFs with many images while keeping them readable</p>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📄</div>
+            <div class="upload-text">
+                <strong>Click to upload</strong> or drag and drop your PDF here
+            </div>
+            <input type="file" id="fileInput" accept=".pdf">
+        </div>
+
+        <div class="file-info" id="fileInfo">
+            <div class="file-name" id="fileName"></div>
+            <div class="file-size" id="fileSize"></div>
+        </div>
+
+        <div class="quality-selector">
+            <label>Compression Quality</label>
+            <div class="quality-options">
+                <label class="quality-option">
+                    <input type="radio" name="quality" value="screen">
+                    <div class="quality-title">Maximum</div>
+                    <div class="quality-desc">72 DPI - Smallest file</div>
+                </label>
+                <label class="quality-option selected">
+                    <input type="radio" name="quality" value="ebook" checked>
+                    <div class="quality-title">Balanced</div>
+                    <div class="quality-desc">150 DPI - Recommended</div>
+                </label>
+                <label class="quality-option">
+                    <input type="radio" name="quality" value="printer">
+                    <div class="quality-title">High Quality</div>
+                    <div class="quality-desc">300 DPI - Larger file</div>
+                </label>
+            </div>
+        </div>
+
+        <button class="compress-btn" id="compressBtn" disabled>Select a PDF to compress</button>
+
+        <div class="progress" id="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="progress-log" id="progressLog"></div>
+
+        <div class="result" id="result">
+            <div class="result-title">✓ Compression Complete!</div>
+            <div class="result-stats" id="resultStats"></div>
+        </div>
+
+        <div class="note">
+            <div class="note-title">⚙️ Setup Required</div>
+            <div class="note-text">
+                This UI requires a Node.js backend with Ghostscript installed. See the server code in server.js to set up the compression service.
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
