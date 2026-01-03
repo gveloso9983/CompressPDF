@@ -84,7 +84,3 @@ pdf-compressor/
 The server uses Ghostscript to downsample and recompress images within PDFs. Text remains sharp as it's treated as vector data rather than rasterized content.
 
 For large files, compression may take several minutes. Progress is displayed in real-time so you can monitor the process.
-
-## License
-
-MIT
